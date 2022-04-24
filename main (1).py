@@ -36,7 +36,19 @@ def getAmount():
 			daily.append(amount)
 			break
 		elif checker(amount=amount) == "Poor":
-			print("The amount you entered as exceeded the allowed paramenters. Try to reduce it")
+			print("The amount you entered as exceeded the allowed paramenters. Would you like to hear some advice?")
+			while True:
+				command = input("%> ")
+				if command.lower() == "yes" or command.lower() == "y":
+					#enter scenario here
+					print("Help")
+					break
+				elif command.lower() == "no" or command.lower() == "n":
+					#enter scenario here
+					print("No help")
+					break
+				else:
+					print("Command error, try again!")
 			daily.append(amount)
 			print(daily)
 
