@@ -3,12 +3,12 @@ from datetime import datetime
 #defining the amount list
 daily = []
 def delete():
-	31days = [1, 3, 5, 7, 8, 10, 12]
-	30days = [2, 4, 6, 9, 11]
+	thirtyone = [1, 3, 5, 7, 8, 10, 12]
+	thirty = [2, 4, 6, 9, 11]
 	month = datetime.now().strftime("%m")
-	if month in 31days and len(daily) == 31:
+	if month in thirtyone and len(daily) == 31:
 		daily = []
-	elif month in 30days and len(daily) == 30:
+	elif month in thirty and len(daily) == 30:
 		daily = []
 def checker(amount):
 	status = ""
