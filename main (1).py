@@ -1,5 +1,15 @@
+from datetime import datetime 
+
 #defining the amount list
 daily = []
+def delete():
+	31days = [1, 3, 5, 7, 8, 10, 12]
+	30days = [2, 4, 6, 9, 11]
+	month = datetime.now().strftime("%m")
+	if month in 31days and len(daily) == 31:
+		daily = []
+	elif month in 30days and len(daily) == 30:
+		daily = []
 def checker(amount):
 	status = ""
 	if amount <= 130 and type(amount) == int:
@@ -14,9 +24,7 @@ def checker(amount):
 def getAmount():
 	global daily
 	#check the amount of number in array
-	if len(daily) == 31:
-		print("Reseting array")
-		daily = []
+	delete()
 	while True:
 		try:
 			amount = int(input("Type amount of water you used today."))
