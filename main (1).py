@@ -4,7 +4,7 @@ from datetime import datetime
 daily = []
 thirtyone = [1, 3, 5, 7, 8, 10, 12]
 thirty = [2, 4, 6, 9, 11]
-month = datetime.now().strftime("%m")
+month = int(datetime.now().strftime("%m"))
 if month in thirtyone:
 	count = 31
 elif month in thirty:
