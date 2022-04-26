@@ -13,6 +13,7 @@ def delete():
 	global thirtyone
 	global thirty
 	global month
+	global daily
 	if month in thirtyone and len(daily) == 31:
 		daily = []
 	elif month in thirty and len(daily) == 30:
