@@ -41,34 +41,31 @@ def getAmount():
 	while True:
 		try:
 			amount = int(input("Input amount of Water: "))
-			if len(daily) >= 1:
-				daily.append(amount)
-				print(daily)
-				#calculate the sum within the daily
-				for i in daily:
-					sum = sum + i
-				#sum 
-				results = sum + (daily[-1] * count)
-				if amount < sum:
-					conclusion = f"If you keep using water like this, you will use {sum + (daily[-1] * count)} this month"
-				elif amount > sum:
-					conclusion = f"If you keep using water like this, you will use {sum + (daily[-1] * count)} this month"
-				else:
-					conclusion = f"If you keep using water like this, you will use {sum + (daily[-1] * count)} this month"
-				#reduce by 1 everyday
-				count = count - 1
-				#calculate the percentage
-				percentage = daily[-1] / daily[-2] * 100
-				if percentage > 100:
-					status = "more than"
-				elif percentage < 100:
-					percentage = 100 - percentage
-					status = "less than"
-				else:
-					status = "the same as"
-				print(f"Your usage today was {percentage}% {status} yesterday, {conclusion}")
-			else: 
-				daily.append(amount)
+			daily.append(amount)
+			print(daily)
+			#calculate the sum within the daily
+			for i in daily:
+				sum = sum + i
+			#sum 
+			results = sum + (daily[-1] * count)
+			if amount < sum:
+				conclusion = f"If you keep using water like this, you will use {sum + (daily[-1] * count)} this month"
+			elif amount > sum:
+				conclusion = f"If you keep using water like this, you will use {sum + (daily[-1] * count)} this month"
+			else:
+				conclusion = f"If you keep using water like this, you will use {sum + (daily[-1] * count)} this month"
+			#reduce by 1 everyday
+			count = count - 1
+			#calculate the percentage
+			percentage = daily[-1] / daily[-2] * 100
+			if percentage > 100:
+				status = "more than"
+			elif percentage < 100:
+				percentage = 100 - percentage
+				status = "less than"
+			else:
+				status = "the same as"
+			print(f"Your usage today was {percentage}% {status} yesterday, {conclusion}")
 		except TypeError:
 			print("Variable entered is not integer")
 		
