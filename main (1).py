@@ -1,8 +1,9 @@
 from datetime import datetime 
 
 #defining the amount list
-daily = []
-thirtyone = [1, 3, 5, 7, 8, 10, 12]
+daily = [] #list to store daily amount
+#define month
+thirtyone = [1, 3, 5, 7, 8, 10, 12] 
 thirty = [2, 4, 6, 9, 11]
 month = int(datetime.now().strftime("%m"))
 if month in thirtyone:
@@ -14,17 +15,19 @@ def delete():
 	global thirty
 	global month
 	global daily
+	#reset list at the end of the month
 	if month in thirtyone and len(daily) == 31:
 		daily = []
 	elif month in thirty and len(daily) == 30:
 		daily = []
 def checker(amount):
+	#check if the amount exceed the limit amount
 	status = ""
 	if amount <= 130 and type(amount) == int:
-		#enter if smaller or equal than 30 situation here
+		#enter if smaller or equal than amount 
 		status = "Excellent"
 	elif amount > 130 and type(amount) == int:
-		#enter if larger than 30 situation here
+		#enter if larger than amount
 		status = "Poor"
 	else:
 		status = "Error"
