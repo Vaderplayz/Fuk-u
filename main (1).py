@@ -36,8 +36,10 @@ def getAmount():
 	global daily
 	sum = 0
 	global count
+	status = ""
 	#check the amount of number in array
 	delete()
+	percentage = 0
 	while True:
 		try:
 			amount = int(input("Input amount of Water: "))
@@ -57,14 +59,17 @@ def getAmount():
 			#reduce by 1 everyday
 			count = count - 1
 			#calculate the percentage
-			percentage = daily[-1] / daily[-2] * 100
-			if percentage > 100:
-				status = "more than"
-			elif percentage < 100:
-				percentage = 100 - percentage
-				status = "less than"
+			if len(daily) > 1:
+				percentage = daily[-1] / daily[-2] * 100
+				if percentage > 100:
+					status = "more than"
+				elif percentage < 100:
+					percentage = 100 - percentage
+					status = "less than"
+				else:
+					status = "the same as"
 			else:
-				status = "the same as"
+				percentage = 0
 			print(f"Your usage today was {percentage}% {status} yesterday, {conclusion}")
 		except TypeError:
 			print("Variable entered is not integer")
@@ -75,3 +80,4 @@ if __name__ == "__main__":
 	while True:
 		getAmount()
 	
+
