@@ -49,11 +49,11 @@ def getAmount():
 				#sum 
 				results = sum + (daily[-1] * count)
 				if amount < sum:
-					conclusion = f"{sum - amount}L less than predicted"
+					conclusion = f"If you keep using water like this, you will use {sum} this month"
 				elif amount > sum:
-					conclusion = f"{amount - sum}L more than predicted"
+					conclusion = f"If you keep using water like this, you will use {sum} this month"
 				else:
-					conclusion = "as predicted"
+					conclusion = f"If you keep using water like this, you will use {sum} this month"
 				#reduce by 1 everyday
 				count = count - 1
 				#calculate the percentage
