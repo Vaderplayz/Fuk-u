@@ -50,11 +50,11 @@ def getAmount():
 				#sum 
 				results = sum + (daily[-1] * count)
 				if amount < sum:
-					conclusion = f"If you keep using water like this, you will use {sum} this month"
+					conclusion = f"If you keep using water like this, you will use {sum + (daily[-1] * count)} this month"
 				elif amount > sum:
-					conclusion = f"If you keep using water like this, you will use {sum} this month"
+					conclusion = f"If you keep using water like this, you will use {sum + (daily[-1] * count)} this month"
 				else:
-					conclusion = f"If you keep using water like this, you will use {sum} this month"
+					conclusion = f"If you keep using water like this, you will use {sum + (daily[-1] * count)} this month"
 				#reduce by 1 everyday
 				count = count - 1
 				#calculate the percentage
