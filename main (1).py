@@ -43,6 +43,7 @@ def getAmount():
 			amount = int(input("Input amount of Water: "))
 			if len(daily) >= 1:
 				daily.append(amount)
+				print(daily)
 				#calculate the sum within the daily
 				for i in daily:
 					sum = sum + i
