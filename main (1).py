@@ -70,7 +70,7 @@ def getAmount():
 					status = "the same as"
 			else:
 				percentage = 0
-			print(f"Your usage today was {percentage}% {status} yesterday, {conclusion}")
+			print(f"Your usage today was {percentage}% {checker(amount)} yesterday, {conclusion}")
 		except TypeError:
 			print("Variable entered is not integer")
 		
