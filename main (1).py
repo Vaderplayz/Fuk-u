@@ -23,12 +23,12 @@ def delete():
 def checker(amount):
 	#check if the amount exceed the limit amount
 	status = ""
-	if amount <= 130 and type(amount) == int:
+	if amount <= 4 and type(amount) == int:
 		#enter if smaller or equal than amount 
-		status = "Excellent"
-	elif amount > 130 and type(amount) == int:
+		status = "bellow average"
+	elif amount > 4 and type(amount) == int:
 		#enter if larger than amount
-		status = "Poor"
+		status = "greater than average. This is a warning"
 	else:
 		status = "Error"
 	return status
@@ -42,7 +42,9 @@ def getAmount():
 	percentage = 0
 	while True:
 		try:
-			amount = int(input("Input amount of Water: "))
+			amount = int(input("Input amount of Gasoline: "))
+			price = int(input("Input the price per liter: "))
+
 			daily.append(amount)
 			print(daily)
 			#calculate the sum within the daily
@@ -51,11 +53,11 @@ def getAmount():
 			#sum 
 			results = sum + (daily[-1] * count)
 			if amount < sum:
-				conclusion = f"If you keep using water like this, you will use {results} this month"
+				conclusion = f"If you keep using gasoline like this, you will use {results} this month, which cost {results * price}$ in total"
 			elif amount > sum:
-				conclusion = f"If you keep using water like this, you will use {results} this month"
+				conclusion = f"If you keep using gasoline like this, you will use {results} this month, which cost {results * price}$ in total"
 			else:
-				conclusion = f"If you keep using water like this, you will use {results} this month"
+				conclusion = f"If you keep using gasoline like this, you will use {results} this month, which cost {results * price}$ in total"
 			#reduce by 1 everyday
 			count = count - 1
 			#calculate the percentage
@@ -70,7 +72,7 @@ def getAmount():
 					status = "the same as"
 			else:
 				percentage = 0
-			print(f"Your usage today was {percentage}% {checker(amount)} yesterday, {conclusion}")
+			print(f"Your usage today was {percentage}% yesterday, and is {checker(amount)} .{conclusion}")
 		except TypeError:
 			print("Variable entered is not integer")
 		
@@ -80,4 +82,3 @@ if __name__ == "__main__":
 	while True:
 		getAmount()
 	
-
